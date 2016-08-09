@@ -1,0 +1,11 @@
+<h1 class="text-center">This is the results page</h1>
+
+ <h3>Places to hike</h3>
+  <% results.forEach(function(result) { %>
+  	<div class="well">
+	    <h4><%= result.name %></h4>
+			<p><%= result.description %></p>
+			<p><a class="btn btn-info" href="<%= result.activities[0].url %>" target="_blank">More Info</a>
+			<a class="mapUrl btn btn-default" href="https://www.google.com/maps/place/<%= result.name %>" target="_blank">Google Maps</a></p>
+	  </div>
+  <% }); %>
