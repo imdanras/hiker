@@ -1,0 +1,21 @@
+body {
+  background: url('https://hd.unsplash.com/uploads/14121985124429dd8eeb5/60431f5b') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-top: 50px;
+}
+
+.search {
+	color: white;
+	text-shadow: 1px 1px black;
+}
+
+#map {
+	height: 100px;
+	width: 100px;
+}
+.navbar {
+	background-color: rgba(192,192,192,0.85);
+}

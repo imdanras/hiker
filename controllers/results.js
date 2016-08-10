@@ -19,22 +19,14 @@ router.get('/', function(req, res) {
 	})
 })
 
+//AIzaSyAg57CFfCduGwhKOB6ARu6zovvEOGUC36E -- google maps api key
+//   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAg57CFfCduGwhKOB6ARu6zovvEOGUC36E&callback=initMap"type="text/javascript"></script>
 
-'https://trailapi-trailapi.p.mashape.com/?q[activities_activity_type_name_eq]=hiking&q[city_cont]=Seattle&q[state_cont]=Washington&radius=25"'
+// router.get('/:id', function(req, res) {
+// 	request({
+// 		url: ''
+// 	})
+// })
 
-// router.get('https://trailapi-trailapi.p.mashape.com/?q[activities_activity_type_name_eq]=hiking&q[city_cont]=Seattle&radius=25').header("X-Mashape-Key", "ocD09yBCRLmshy5zRdmpPtqwhGINp1qldY3jsngEC2dhf2ljLr")
-// .header("Accept", "text/plain")
-// .end(function (result) {
-//   console.log(result.status, result.headers, result.body);
-// });
-// ,
-//     qs: qs
-//   }, function (error, response, body) {
-//     if (!error && response.statusCode == 200) {
-//       var dataObj = JSON.parse(body);
-//       res.send(dataObj.Search);
-//     }
-//   });
-// });
 
 module.exports = router;
