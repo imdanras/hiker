@@ -1,26 +1,28 @@
 <h1 class="text-center search">This is the results page</h1>
-
-  <% results.forEach(function(result) { %>
     <% var mapsObject = []; %>
-    <% mapsObject.push({ 'lat': result.lat, lng: result.lon}) %>
+  <% results.forEach(function(result) { %>
+    <% console.log("hi from results.ejs"); %>
+    <% mapsObject.push({ lat: result.lat, lng: result.lon}) %>
     <% console.log(mapsObject); %>
-    
+     <% }) %>
 
     <script>
     function initMap() {
       var map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 47.523893, lng: -122.521779 },
+        center: {lat: <%= mapsObject[0].lat %>, lng: <%= mapsObject[0].lng %> },
         zoom: 9,
         mapTypeId: 'roadmap'
       });
-      var marker = new google.maps.Marker({
-        position: {lat: <%= result.lat %>, lng: <%= result.lon %> },
-        map: map,
-        title: '<%= result.name %>'
-      });
+      <% mapsObject.forEach(function(obj) { %>
+        new google.maps.Marker({
+          position: {lat: <%= obj.lat %>, lng: <%= obj.lng %> },
+          map: map,
+          title: '<%= obj.name %>'
+        })
+        <% }) %>
     }
     </script>
-    <% }) %>
+   
     <div class="container">
       <div id="map" class="text-center"></div>
     </div>

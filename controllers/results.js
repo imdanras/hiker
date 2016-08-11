@@ -14,7 +14,7 @@ router.get('/', function(req, res) {
 	}, function(error, response, body) {
 		if (!error && response.statusCode == 200) {
 			var dataObj = JSON.parse(body);
-			res.render("results", {results: dataObj.places});;
+			res.render("results", {results: dataObj.places});
 		}
 	})
 })
