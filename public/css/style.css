@@ -13,8 +13,8 @@ body {
 }
 
 #map {
-	height: 100px;
-	width: 100px;
+	height: 500px;
+	width: 100%;
 }
 .navbar {
 	background-color: rgba(192,192,192,0.85);

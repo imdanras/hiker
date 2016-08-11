@@ -1,5 +1,30 @@
 <h1 class="text-center search">This is the results page</h1>
 
+  <% results.forEach(function(result) { %>
+    <% var mapsObject = []; %>
+    <% mapsObject.push({ 'lat': result.lat, lng: result.lon}) %>
+    <% console.log(mapsObject); %>
+    
+
+    <script>
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 47.523893, lng: -122.521779 },
+        zoom: 9,
+        mapTypeId: 'roadmap'
+      });
+      var marker = new google.maps.Marker({
+        position: {lat: <%= result.lat %>, lng: <%= result.lon %> },
+        map: map,
+        title: '<%= result.name %>'
+      });
+    }
+    </script>
+    <% }) %>
+    <div class="container">
+      <div id="map" class="text-center"></div>
+    </div>
+
  <h3 class="search">Places to hike</h3>
   <% results.forEach(function(result) { %>
   	<div class="well">
@@ -7,21 +32,7 @@
 			<p><%= result.description %></p>
 			<p><a class="btn btn-info" href="<%= result.activities[0].url %>" target="_blank">More Info</a>
 			<a class="mapUrl btn btn-default" href="https://www.google.com/maps/place/<%= result.name %>" target="_blank">Google Maps</a></p>
-			<div id="map"></div>
-    <script>
-      function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: <%= result.lat %>, lng: <%= result.lon %> },
-          zoom: 9,
-          mapTypeId: 'roadmap'
-        });
-        var marker = new google.maps.Marker({
-			    position: {lat: <%= result.lat %>, lng: <%= result.lon %> },
-			    map: map,
-			    title: '<%= result.name %>'
-  });
-}
-    </script>
+
 	  </div>
   <% }); %>
 
